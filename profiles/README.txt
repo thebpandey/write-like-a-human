@@ -1,0 +1,1 @@
+Saved voice profiles live here as <name>.md. This directory is gitignored on purpose: profiles distill your personal writing style and should not be pushed to a public repo. See references/onboarding.md.
