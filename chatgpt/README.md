@@ -7,8 +7,10 @@ The package follows the Agent Skills directory format:
 
 ```text
 write-like-a-human/
+├── .gitignore
 ├── SKILL.md
 ├── profiles/
+│   └── README.txt
 └── references/
     ├── ai-patterns.md
     ├── banned-vocabulary.md
@@ -20,8 +22,8 @@ write-like-a-human/
 ## Install in ChatGPT
 
 1. Download or clone this repository.
-2. Create a ZIP archive whose top-level folder is
-   `chatgpt/write-like-a-human/`.
+2. Package the directory `chatgpt/write-like-a-human/` as a ZIP whose
+   top-level folder is `write-like-a-human/`.
 3. In ChatGPT, open **Plugins**, select **Skills**, then select
    **Create > Upload from your computer**.
 4. Upload the ZIP and review the scan result before installing it.
