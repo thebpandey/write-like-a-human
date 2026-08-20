@@ -66,10 +66,11 @@ Use Write Like a Human onboarding to create a profile named dev-blog from these 
 
 ## Voice profiles
 
-The installed package includes an empty `profiles/` directory. During
-onboarding, ChatGPT returns a profile file but does not automatically persist
-it in the installed skill. Add the returned `profiles/<name>.md` file through
-the ChatGPT Skills editor, or attach it again in a future conversation.
+The installed package includes a `profiles/` directory containing only privacy
+guidance. During onboarding, ChatGPT returns a profile file but does not
+automatically persist it in the installed skill. Add the returned
+`profiles/<name>.md` file through the ChatGPT Skills editor, or attach it again
+in a future conversation.
 
 Do not commit personal voice profiles to this public repository.
 
