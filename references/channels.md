@@ -1,5 +1,7 @@
 # Channel Rules
 
+Contents: Detection cues; Blog / article; LinkedIn; Facebook; Reddit; Instagram; X (Twitter); Content-type layers (apply on top of channel).
+
 Merged from The Humanizer (channel auto-detection, LinkedIn markers, Hook vs.
 Value calibration), lguz (LinkedIn special rules), and Aboudjem (--purpose
 layers), extended to Facebook, Reddit, Instagram, and X for this skill's

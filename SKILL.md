@@ -11,6 +11,8 @@ user-invocable: true
 disable-model-invocation: true
 argument-hint: '[write|rewrite|detect|onboard] "text or brief" [--channel blog|linkedin|facebook|reddit|instagram|x] [--voice clear-thinker|casual-storyteller|sharp-opinionated|warm-professional|technical|mirror] [--profile NAME] [--no-profile] [--score]'
 license: MIT
+metadata:
+  intended_model: opus
 ---
 
 # Write Like a Human
@@ -35,7 +37,7 @@ Infer the mode from the request, or accept it as the first argument.
 | `detect` | User asks for a review, score, or audit only | Pattern report + 0-100 score. No rewrite. |
 | `onboard` | User wants the skill to learn their writing style | Analyze 1-5 samples -> distill a named voice profile -> save to `profiles/` -> future runs offer it. Procedure in `references/onboarding.md`. |
 
-If the user passes `--score` in any mode, prepend a `[Score: NN/100]` line
+If the user passes `--score` in any mode, prepend a `[Score: ~NN/100 (estimate)]` line
 using the rubric in Step 6.
 
 Flags that skip the voice question in Step 2: `--profile NAME` (use that
@@ -178,7 +180,15 @@ generic payoff kills the post.
 - [ ] No invented facts, sources, quotes, or statistics anywhere
 - [ ] Reads aloud like a person talking; a reader could picture who wrote it
 
-**Scoring rubric (when `--score` is set or mode is `detect`):**
+If any box fails, return to the pass that owns it (vocabulary and
+transitions: Pass 1; structures, dashes, paragraph endings: Pass 2;
+burstiness, specifics, opinion: Pass 3; channel: Step 5), then re-run the
+whole checklist. After two loops, deliver with each still-failing box named
+in the change summary.
+
+**Scoring rubric (when `--score` is set or mode is `detect`):** this is a
+judgment estimate, not a measurement. Show it as `[Score: ~NN/100 (estimate)]`
+and name the three inputs you counted.
 `score = 4 x patterns_hit + 25 x (1 - burstiness_normalized) + 15 x banned_vocab_ratio`, clamped 0-100.
 0-20 pristine human | 21-40 mostly human | 41-60 mixed | 61-80 AI-leaning | 81-100 pure AI smell.
 

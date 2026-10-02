@@ -1,5 +1,7 @@
 # Banned Vocabulary
 
+Contents: Tier 1: Dead giveaways (replace on sight); Tier 2: Suspicious in density (max once each); Tier 3: Transitions (fine alone, a tell when clustered); Banned phrases; Marketing clichés (review/product content).
+
 Merged from lguz's tiered dictionary, brandonwise's 3-tier vocabulary,
 Aboudjem's P7 triggers, blader's Wikipedia-derived word lists, and The
 Humanizer's buzzword bans. Words below appear at statistically abnormal rates
