@@ -1,5 +1,17 @@
 # Channel Rules
 
+## Contents
+
+- [Detection cues](#detection-cues)
+- [Blog / article](#blog--article)
+- [LinkedIn](#linkedin)
+- [Facebook](#facebook)
+- [Reddit](#reddit)
+- [Instagram](#instagram)
+- [X (Twitter)](#x-twitter)
+- [Content-type layers (apply on top of channel)](#content-type-layers-apply-on-top-of-channel)
+
+
 Contents: Detection cues; Blog / article; LinkedIn; Facebook; Reddit; Instagram; X (Twitter); Content-type layers (apply on top of channel).
 
 Merged from The Humanizer (channel auto-detection, LinkedIn markers, Hook vs.

@@ -1,5 +1,16 @@
 # Banned Vocabulary
 
+## Contents
+
+- [Confidence split inside Tier 1 (detect mode)](#confidence-split-inside-tier-1-detect-mode)
+- [Tier 1: Dead giveaways (replace on sight)](#tier-1-dead-giveaways-replace-on-sight)
+- [Tier 2: Suspicious in density (max once each)](#tier-2-suspicious-in-density-max-once-each)
+- [Tier 3: Transitions (fine alone, a tell when clustered)](#tier-3-transitions-fine-alone-a-tell-when-clustered)
+- [Banned phrases](#banned-phrases)
+- [Filler that always shortens](#filler-that-always-shortens)
+- [Marketing clichés (review/product content)](#marketing-clichés-reviewproduct-content)
+
+
 Contents: Confidence split inside Tier 1 (detect mode); Tier 1: Dead giveaways (replace on sight); Tier 2: Suspicious in density (max once each); Tier 3: Transitions (fine alone, a tell when clustered); Banned phrases; Filler that always shortens; Marketing clichés (review/product content).
 
 Merged from lguz's tiered dictionary, brandonwise's 3-tier vocabulary,

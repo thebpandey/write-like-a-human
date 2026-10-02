@@ -1,5 +1,16 @@
 # Onboarding: Learn the User's Voice
 
+## Contents
+
+- [Intake](#intake)
+- [Extraction](#extraction)
+- [Profile file format](#profile-file-format)
+- [Applying a profile](#applying-a-profile)
+- [Updating a profile](#updating-a-profile)
+- [Environment behavior](#environment-behavior)
+- [Privacy](#privacy)
+
+
 Contents: Intake; Extraction; Profile file format; Applying a profile; Updating a profile; Environment behavior; Privacy.
 
 The `onboard` mode turns 1-5 writing samples into a named, reusable voice
