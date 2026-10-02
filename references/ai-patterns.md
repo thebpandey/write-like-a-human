@@ -6,12 +6,16 @@ brandonwise/humanizer (statistical signals), lguz (structure pass), and The
 Humanizer (LinkedIn-era structural tells). Structures are stronger tells than
 vocabulary. Fix every instance.
 
+Refreshed against all four upstream repos on 2026-09-13. Entries marked *weak
+alone* are defaults a person may choose on purpose: act on them only when
+several tells share a passage.
+
 ## Contents
-1. Sentence-level structures (S1-S10)
-2. Content-level patterns (C1-C8)
+1. Sentence-level structures (S1-S16)
+2. Content-level patterns (C1-C11)
 3. Document-level patterns (D1-D6)
-4. Formatting tells (F1-F6)
-5. Chatbot leakage (L1-L4)
+4. Formatting tells (F1-F9)
+5. Chatbot leakage (L1-L8)
 6. Statistical signals
 7. What NOT to flag (false positives)
 8. Signs of human writing (preserve these)
@@ -58,6 +62,42 @@ clearest term and repeat it. Humans repeat words.
 **S10: Aphorism formulas.** "X is the language/currency/architecture of Y",
 "X becomes a trap". Replace with the concrete claim it gestures at.
 
+**S11: Repeated sentence openings.** Several sentences in a row start with the
+same subject because repetition is handled by rule instead of by ear. Merge the
+sentences, change the subject, or lead with the action. Do not ban the word; a
+deliberate rhythm ("She came. She saw.") is a human choice. *Weak alone.*
+Bad: "She noted the door. She noted the lock on it. She filed both away."
+Good: "She noted the door and its lock, then filed both away."
+
+**S12: Stacked qualifiers and leftover hedge debris.** "could potentially",
+"might arguably", "to be fair", "in some cases it may", "to some extent",
+"in some ways". Two kinds: qualifiers piled up to repair an earlier
+overstatement, and a hedge that made sense mid-draft before the claim
+solidified. Reread every hedge against its own sentence and delete the ones
+whose caution no longer matches the sentence's confidence. Keep scope
+statements, safety and legal notices, real corrections, and ordinary human
+hedges like "perhaps" or "tends to". *Weak alone.*
+Bad: "It could potentially possibly be argued that the policy might have some
+effect on outcomes."
+Good: "The policy may affect outcomes."
+
+**S13: Uniform hyphenated pairs.** "data-driven", "high-quality", "real-time",
+"cross-functional", "end-to-end", "well-documented" hyphenated in every
+position. Hyphenate a compound modifier before a noun ("a high-quality
+report"); drop it after the verb ("the report is high quality"). *Weak alone.*
+
+**S14: Passive voice and missing subjects.** Agentless constructions that hide
+who acts: "no configuration is needed", "the results are preserved
+automatically", "it is recommended that", "changes were made". Name the actor
+and use active voice where it clarifies. *Weak alone.*
+
+**S15: Colon and question-mark reveals.** "The result: a complete disaster."
+"The outcome? Four managers agreed." Weave the reveal into a normal sentence.
+
+**S16: False agency.** Abstractions performing willed human actions: "the data
+tells us", "the market rewards", "the decision emerges". Name the human actor,
+or address the reader as "you".
+
 ## 2. Content-level patterns
 
 **C1: Significance inflation.** "marking a pivotal moment", "a testament to",
@@ -86,6 +126,32 @@ the topic is important. Delete; if it's important, the content shows it.
 
 **C8: Speculative gap-filling.** "Likely grew up...", "maintains a low
 profile". Say what isn't known, or cut. Don't dress a guess up as fact.
+
+**C9: Argument residue (arguing with no one).** "This isn't mainly about...",
+"I'm not saying...", "To be clear...", "Don't get me wrong...", "Some might
+argue... but", "A tempting approach would be...", "It would be easy to dismiss
+this as...". The text rebuts an objection or rejects an option that appears
+nowhere else in the piece, usually a leftover from an internal draft. Cut the
+defense and state the claim. Keep an objection the piece actually names and
+answers in full, and keep an option a reader would genuinely weigh. Several
+unrelated rejections in a row is a much stronger tell than one.
+Bad: "This isn't mainly about prompt length, and I'm not arguing documentation
+doesn't matter. The issue is whether the agent can use the instruction."
+Good: "The issue is whether the agent can use the instruction when it acts."
+
+**C10: Diff-anchored writing (describing the previous version).** Docs, lesson
+copy, and comments that narrate what the text replaced instead of what is true
+now: "was added to", "now uses", "has been updated to", "replaces the old",
+"previously". Describe the thing as it is. Mention the prior version only in
+change logs, release notes, and migration guides.
+Bad: "This function was added to replace the previous approach of iterating
+through all items, which caused O(n squared) performance."
+Good: "This function uses a hash map for O(1) lookups."
+
+**C11: Hedged-enumeration openers.** "There are several ways to...", "There are
+a few things to consider", "Generally speaking,", "It is generally a good idea
+to". Announcing a vague list instead of committing to an answer. Give the
+specific answer first.
 
 ## 3. Document-level patterns
 
@@ -134,6 +200,21 @@ Rewrite as prose unless the content is genuinely a checklist.
 **F6: Curly quotes as a fingerprint.** Only meaningful when stacked with
 other tells; many editors auto-curl. See false positives.
 
+**F7: A heading restated in the first sentence.** A heading followed by a
+one-line paragraph that says the heading again before the real content starts.
+Also "This section covers X." Cut the restating line.
+Bad: "## Performance / Speed matters. / When users hit a slow page, they leave."
+Good: "## Performance / When users hit a slow page, they leave."
+
+**F8: Decoration around headings and lists.** Arrows, emoji, or icons on
+headings and list items, and a horizontal rule between every section. Strip
+them. If the document opens with a top-level heading that repeats its own
+title, let the title stand once.
+
+**F9: Excessive structure.** Headers and bullets imposed on content that is
+three paragraphs of continuous thought. Structure earns its place when the
+reader will scan or skip; otherwise write prose.
+
 ## 5. Chatbot leakage
 
 **L1: Chatbot artifacts.** "I hope this helps!", "Certainly!", "Would you
@@ -148,6 +229,31 @@ start with the content.
 
 **L4: Citation markup and UTM leakage.** "citeturn0search0", "oai_citation",
 "utm_source=chatgpt.com" in URLs. Strip all of it.
+
+**L5: Reasoning-chain artifacts.** Chain-of-thought scaffolding that leaked
+into the finished text: "Let me think", "Breaking this down", "First, I'll",
+"Step 1:" where the numbering was meant to stay internal. Delete the
+scaffolding and keep the conclusion in the author's voice.
+
+**L6: Knowledge-cutoff disclaimers.** "as of my last training update", "while
+specific details are limited", "based on available information", "not widely
+documented", "in the provided sources". The model is reporting where its
+knowledge ends, then often filling the gap with a guess (see C8). State what
+the source does not show, or cut the sentence. Never present a guess as fact.
+Bad: "While specific details about the founding are not extensively documented
+in readily available sources, it appears to have been established in the 1990s."
+Good: "The founding date is not in the available sources." (Or cut it.)
+
+**L7: Acknowledgment loops and confidence theater.** Restating the reader's
+question back at them ("You're asking about X..."), and self-rated confidence
+("I'm confident that...", "It's worth noting that..."). Delete both and make
+the claim.
+
+**L8: Invisible-character residue.** Zero-width space (U+200B), zero-width
+joiner (U+200D), soft hyphen (U+00AD), stray non-breaking spaces, and Cyrillic
+or Greek homoglyphs standing in for Latin letters. Strip them and normalize to
+plain text. This is text hygiene, not detector evasion: these characters break
+search, copy-paste, and screen readers.
 
 ## 6. Statistical signals
 

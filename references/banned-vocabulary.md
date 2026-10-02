@@ -1,12 +1,24 @@
 # Banned Vocabulary
 
-Contents: Tier 1: Dead giveaways (replace on sight); Tier 2: Suspicious in density (max once each); Tier 3: Transitions (fine alone, a tell when clustered); Banned phrases; Marketing clichés (review/product content).
+Contents: Confidence split inside Tier 1 (detect mode); Tier 1: Dead giveaways (replace on sight); Tier 2: Suspicious in density (max once each); Tier 3: Transitions (fine alone, a tell when clustered); Banned phrases; Filler that always shortens; Marketing clichés (review/product content).
 
 Merged from lguz's tiered dictionary, brandonwise's 3-tier vocabulary,
 Aboudjem's P7 triggers, blader's Wikipedia-derived word lists, and The
 Humanizer's buzzword bans. Words below appear at statistically abnormal rates
 in LLM output. Tier 1: replace on sight. Tier 2: max once each, only where
 natural. Tier 3: fine alone, a tell when clustered.
+
+## Confidence split inside Tier 1 (detect mode)
+
+When writing or rewriting, replace every Tier 1 word below. When *judging*
+whether a text is AI-written, weight them differently. A wordiness fix is not
+proof of AI authorship.
+
+- **Tier 1A, evidence-grade:** delve, tapestry, testament, multifaceted, realm, interplay, intricate, "in today's ... landscape". These rarely survive in unedited human prose. One hit already carries weight.
+- **Tier 1B, wordiness-grade:** underscore, leverage, elevate, "it's worth noting", "it's important to note". A careful human reaches for these too, just as the lazier choice. Flag, but never score a lone 1B hit as evidence.
+
+Rule: a lone Tier 1B, 2, or 3 word is not evidence. A Tier 1A hit, or a
+cluster across tiers, is.
 
 ## Tier 1: Dead giveaways (replace on sight)
 
@@ -61,7 +73,9 @@ dynamic, cutting-edge, nuanced, facilitate, utilize, paradigm, proactive,
 ubiquitous, quintessential, streamline, optimize, maximize, scalable,
 world-class, state-of-the-art, best-in-class, journey (figurative), superpower,
 essentially, notably, valuable, key (adjective), highlight (verb), align with,
-encompass, catalyze
+encompass, catalyze, quietly, actually (as a sentence opener), emphasizing,
+cadence, gate / gated / gating (figurative only; keep the technical sense),
+significant, various, effective, powerful, essential
 
 ## Tier 3: Transitions (fine alone, a tell when clustered)
 
@@ -96,6 +110,19 @@ best transition is none.
 - "circle back" / "move the needle" / "low-hanging fruit" / "pain points" / "double-click on" / "value-add" / "net-net" / "bandwidth" (figurative) -> plain speech
 - "The truth is," / "And honestly?" / "Let's be honest" as candor-openers -> just state the claim
 - "Read that again." / "Let that sink in." -> cut both; earn the pause or lose it
+
+## Filler that always shortens
+
+| Bloat | Plain |
+|-------|-------|
+| in order to | to |
+| due to the fact that | because |
+| at this point in time | now |
+| for the purpose of | to |
+| in the event that | if |
+| has the ability to | can |
+| a number of | some, or the actual count |
+| prior to | before |
 
 ## Marketing clichés (review/product content)
 
