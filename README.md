@@ -202,3 +202,7 @@ look for. Fix the writing and that problem solves itself.
 
 MIT. Derived portions remain under their original MIT licenses; see the linked
 repositories for their license texts and copyright holders.
+
+---
+
+Built by [Bhaskar Pandey](https://www.bhaskarpandey.com).
